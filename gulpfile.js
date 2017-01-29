@@ -10,7 +10,7 @@ gulp.task('browserSync', function() {
 });
 
 gulp.task('sass', function() {
-  return gulp.src('src/styles/*.scss')
+  return gulp.src('styles/*.scss')
   	.pipe(sass()) 
   	.pipe(gulp.dest(dest))
   	.pipe(browserSync.reload({
@@ -19,17 +19,22 @@ gulp.task('sass', function() {
 });
 
 gulp.task('views', function() {
-  return gulp.src('src/pages/*.php')
+  return gulp.src('pages/*.php')
    .pipe(gulp.dest(dest))
 });
 
 gulp.task('wp_config', function() {
-  return gulp.src('src/config/*.php')
+  return gulp.src('config/*.php')
     .pipe(gulp.dest(dest))
 });
 
-gulp.task('watch', ['browserSync', 'sass', 'wp_config', 'views'], function (){
-  gulp.watch('src/styles/*.scss', ['sass']); 
-  gulp.watch('src/pages/*.php', browserSync.reload); 
-  gulp.watch('src/scripts/*.js', browserSync.reload);
+gulp.task('scripts', function() {
+  return gulp.src('scripts/*.js')
+    .pipe(gulp.dest(dest + '/scripts'))
+});
+
+gulp.task('watch', ['browserSync', 'sass', 'scripts', 'wp_config', 'views'], function (){
+  gulp.watch('styles/*.scss', ['sass']); 
+  gulp.watch('pages/*.php', browserSync.reload); 
+  gulp.watch('scripts/*.js', browserSync.reload);
 });
