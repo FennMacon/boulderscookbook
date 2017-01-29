@@ -1,7 +1,7 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
 var browserSync = require('browser-sync').create();
-var dest = 'wp-content/themes/twentyseventeen-child';
+var dest = '../wp-content/themes/twentyseventeen-child';
 
 gulp.task('browserSync', function() {
   browserSync.init({
