@@ -1,0 +1,24 @@
+{
+  "name": "boulders-cookbook",
+  "version": "1.0.0",
+  "description": "An awesome wordpress based cookbook",
+  "main": "../index.php",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FennMacon/boulderscookbook.git"
+  },
+  "author": "Fenn & James Macon",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FennMacon/boulderscookbook/issues"
+  },
+  "homepage": "https://github.com/FennMacon/boulderscookbook#readme",
+  "devDependencies": {
+    "browser-sync": "^2.18.6",
+    "gulp": "^3.9.1",
+    "gulp-sass": "^3.1.0"
+  }
+}
